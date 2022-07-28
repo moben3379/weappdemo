@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6156c945-f3ba-4ad2-a5f8-9f45d431b037" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/Applications/apache-maven-3.8.4" />
+        <option name="userSettingsFile" value="/Applications/apache-maven-3.8.4/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2C7DTASZonjscJ6ghzj89Jgg8uX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/controller" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/controller" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/service/impl" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/service" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/util" />
+      <recent name="$PROJECT_DIR$/src/main/java/cn/edu/guet/weappdemo/http" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WeappdemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="weappdemo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.guet.weappdemo.WeappdemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6156c945-f3ba-4ad2-a5f8-9f45d431b037" name="Changes" comment="" />
+      <created>1658144737060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658144737060</updated>
+      <workItem from="1658144739952" duration="6051000" />
+      <workItem from="1658404510548" duration="5325000" />
+      <workItem from="1658504857842" duration="35000" />
+      <workItem from="1658538766303" duration="7545000" />
+      <workItem from="1658552148711" duration="2684000" />
+      <workItem from="1658560383230" duration="4160000" />
+      <workItem from="1658705366508" duration="9000" />
+      <workItem from="1658717296263" duration="12459000" />
+      <workItem from="1658822012500" duration="3200000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

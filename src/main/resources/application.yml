@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://118.190.148.144:3306/mengliangbo_juntai?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: Mysql_123456
+
+server:
+  port: 8090
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: cn.edu.guet.weappdemo.mapper
