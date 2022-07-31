@@ -10,4 +10,8 @@ public interface OrderListMapper {
 
     List<OrderList> getOrderList();
 
+    List<OrderList> searchOrderList(String searchKey);/*查询订单*/
+
+    int deleteOrderByOrderId(String orderId);
+
 }

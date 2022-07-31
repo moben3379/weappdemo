@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface OrderService {
     List<OrderList> orderList();
+
+    int deleteOrderByOrderId(String orderId);
+
+    List<OrderList> searchOrderList(String searchKey);/*查询订单*/
 }
