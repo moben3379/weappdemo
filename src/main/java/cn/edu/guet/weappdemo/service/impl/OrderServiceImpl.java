@@ -26,5 +26,10 @@ public class OrderServiceImpl implements OrderService {
 
         return orderListMapper.deleteOrderByOrderId(orderId);
     }
+
+    @Override
+    public List<OrderList> searchOrderList(String searchKey){
+        return orderListMapper.searchOrderList(searchKey);
+    }
     
 }

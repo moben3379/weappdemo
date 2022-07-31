@@ -26,4 +26,10 @@ public class OrderController {
 
         return HttpResult.ok(orderService.deleteOrderByOrderId(orderId));
     }
+
+    @PostMapping("searchOrderList")
+    public HttpResult searchOrderList(@RequestBody String searchKey){
+        System.out.println(searchKey);
+        return HttpResult.ok(orderService.searchOrderList(searchKey));
+    }
 }

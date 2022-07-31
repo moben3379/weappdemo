@@ -24,4 +24,23 @@
         FROM order_master
     </select>
 
+
+    <!--查询订单-->
+    <select id="searchOrderList" resultType="cn.edu.guet.weappdemo.bean.OrderList" resultMap="OrderListMap" parameterType="string">
+        SELECT *
+        FROM order_master
+        WHERE order_id LIKE concat('%',#{VALUE},'%') or
+            Menu_id LIKE concat('%',#{VALUE},'%') or
+            Menu_price LIKE concat('%',#{VALUE},'%') or
+            Menu_quantity LIKE concat('%',#{VALUE},'%') or
+            buyer_name LIKE concat('%',#{VALUE},'%') or
+            buyer_phone LIKE concat('%',#{VALUE},'%') or
+            buyer_address LIKE concat('%',#{VALUE},'%') or
+            buyer_openid LIKE concat('%',#{VALUE},'%') or
+            order_amount LIKE concat('%',#{VALUE},'%') or
+            order_status LIKE concat('%',#{VALUE},'%') or
+            create_time LIKE concat('%',#{VALUE},'%') or
+            update_time LIKE concat('%',#{VALUE},'%')
+    </select>
+
 </mapper>
