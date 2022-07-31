@@ -1,5 +1,6 @@
 package cn.edu.guet.weappdemo.controller;
 
+import cn.edu.guet.weappdemo.bean.SysUser;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,14 @@ public class SysUserController {
         System.out.println("查找权限："+name);
         return HttpResult.ok(sysUserService.findPermissions(name));
     }
+
+    /**
+     *获取用户列表
+     */
+    @GetMapping(value = "/findUserList")
+    public HttpResult findUserList() {
+        System.out.println("查找用户列表：");
+        return HttpResult.ok(sysUserService.findUserList());
+    }
+
 }

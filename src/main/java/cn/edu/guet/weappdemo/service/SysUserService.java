@@ -14,15 +14,12 @@ import java.util.Set;
  */
 public interface SysUserService {
 
-    /**
-     * 查找用户的菜单权限标识集合
-     *
-     * @param userName
-     * @return
-     */
+    List<SysUser> findUserList();//查找用户列表
+
     Set<String> findPermissions(String userName);
 
     SysUser findByName(String username);
 
     List<SysUserRole> findUserRoles(Long userId);
+
 }
