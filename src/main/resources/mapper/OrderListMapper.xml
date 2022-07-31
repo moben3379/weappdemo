@@ -15,6 +15,10 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="create_time"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="update_time"/>
     </resultMap>
+    <delete id="deleteOrderByOrderId" parameterType="string">
+        delete
+        from order_master where order_id=#{VALUE}
+    </delete>
     <select id="getOrderList" resultType="cn.edu.guet.weappdemo.bean.OrderList" resultMap="OrderListMap">
         SELECT *
         FROM order_master

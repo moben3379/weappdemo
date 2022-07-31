@@ -10,4 +10,6 @@ public interface OrderListMapper {
 
     List<OrderList> getOrderList();
 
+    int deleteOrderByOrderId(String orderId);
+
 }
