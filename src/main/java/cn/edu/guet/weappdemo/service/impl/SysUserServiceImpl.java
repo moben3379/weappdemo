@@ -66,6 +66,14 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserRoleMapper.findUserRoles(userId);
     }
 
+    /*
+    查询用户列表
+     */
+    @Override
+    public List<SysUser> findUserList() {
+        return sysUserMapper.findUserList();
+    }
+
     @Override
     public Set<String> findPermissions(String userName) {
         Set<String> perms = new HashSet<>();

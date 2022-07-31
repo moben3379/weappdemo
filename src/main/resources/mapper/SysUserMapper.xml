@@ -23,4 +23,14 @@
         from sys_user u
         where u.name = #{name,jdbcType=VARCHAR}
     </select>
+    <select id="findUserList" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName
+        from sys_user u
+
+        /*select udr.* ,d.name
+        from sys_dept d,(select u.*,sur.remark
+        from sys_user u,(select ur.* ,(select remark from sys_role r where r.id=ur.role_id )remark from sys_user_role ur) sur
+        where u.id= sur.user_id) udr
+        where d.id=udr.dept_id*/
+    </select>
 </mapper>

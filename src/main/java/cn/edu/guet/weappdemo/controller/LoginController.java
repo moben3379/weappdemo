@@ -29,8 +29,8 @@ public class LoginController {
     public HttpResult login(@RequestBody LoginBean loginBean, HttpServletRequest request) {
         String username = loginBean.getUsername();
         String password = loginBean.getPassword();
-        System.out.println(username);
-        System.out.println(password);
+        System.out.println("用户名："+username);
+        System.out.println("密码："+password);
         // 用户信息
         SysUser user = sysUserService.findByName(username);
         // 账号不存在、密码错误
