@@ -39,6 +39,7 @@ public class GetMenuController {
 //    String username, String password, HttpServletRequest request
     public void alterMenuInformation(@RequestParam Integer Id, @RequestParam String Name, @RequestParam double Price, @RequestParam String Form, @RequestParam Integer Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
         System.out.println("********************修改的数据向数据库输送********************");
+        System.out.println(Id+Name+Price+Form+Count+Icon+Detail);
         getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
 //        return HttpResult.ok(getMenus);
     }

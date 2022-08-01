@@ -3,14 +3,13 @@
 
 <mapper namespace="cn.edu.guet.weappdemo.mapper.GetMenuMapper">
     <resultMap id="BaseResultMap" type="cn.edu.guet.weappdemo.bean.FoodMenu">
-<!--        下面备注请取消，才能正常使用     -->
-<!--        <id column="Menu_Id" jdbcType="INTEGER" property="Menu_Id"/>-->
-<!--        <result column="Menu_Name" jdbcType="VARCHAR" property="Menu_Name"/>-->
-<!--        <result column="Menu_Price" jdbcType="DOUBLE" property="Menu_Price"/>-->
-<!--        <result column="Menu_Form" jdbcType="VARCHAR" property="Menu_Form"/>-->
-<!--        <result column="Menu_Count" jdbcType="INTEGER" property="Menu_Count"/>-->
-<!--        <result column="Menu_Icon" jdbcType="VARCHAR" property="Menu_Icon"/>-->
-<!--        <result column="Menu_detail" jdbcType="VARCHAR" property="Menu_detail"/>-->
+        <id column="Menu_Id" jdbcType="INTEGER" property="menu_Id" />
+        <result column="Menu_Name" jdbcType="VARCHAR" property="menu_Name"/>
+        <result column="Menu_Price" jdbcType="DOUBLE" property="menu_Price"/>
+        <result column="Menu_Form" jdbcType="VARCHAR" property="menu_Form"/>
+        <result column="Menu_Count" jdbcType="INTEGER" property="menu_Count"/>
+        <result column="Menu_Icon" jdbcType="VARCHAR" property="menu_Icon"/>
+        <result column="Menu_detail" jdbcType="VARCHAR" property="menu_detail"/>
     </resultMap>
     <sql id="Base_Column_List">
         Menu_Id,Menu_Name,Menu_Price,Menu_Form,Menu_Count,Menu_Icon,Menu_detail
