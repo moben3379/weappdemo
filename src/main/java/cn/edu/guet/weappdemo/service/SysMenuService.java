@@ -28,4 +28,5 @@ public interface SysMenuService {
      * @return
      */
     List<SysMenu> findTree(String userName, int menuType);
+
 }
