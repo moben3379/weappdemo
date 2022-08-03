@@ -30,4 +30,10 @@
         <include refid="Base_Column_List"/>
         from FoodMenu_Information
     </select>
+
+    <delete id="deleteMenu" parameterType="string">
+        delete
+        from FoodMenu_Information where menu_id=#{VALUE}
+    </delete>
+
 </mapper>
