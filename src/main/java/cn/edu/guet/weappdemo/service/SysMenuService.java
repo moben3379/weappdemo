@@ -12,13 +12,11 @@ import java.util.List;
  * @Date 2021-08-14 18:05
  */
 public interface SysMenuService {
-    /**
-     * 根据用户名查找菜单列表
-     *
-     * @param userName
-     * @return
+    /*
+     根据用户名查找菜单列表
      */
     List<SysMenu> findByUser(String userName);
+
 
     /**
      * 查询菜单树,用户ID和用户名为空则查询全部
@@ -28,4 +26,6 @@ public interface SysMenuService {
      * @return
      */
     List<SysMenu> findTree(String userName, int menuType);
+
+
 }

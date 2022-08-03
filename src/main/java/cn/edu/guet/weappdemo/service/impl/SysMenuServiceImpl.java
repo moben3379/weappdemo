@@ -26,6 +26,7 @@ public class SysMenuServiceImpl implements SysMenuService {
         return sysMenuMapper.findByUserName(userName);
     }
 
+
     @Override
     public List<SysMenu> findTree(String userName, int menuType) {
         List<SysMenu> sysMenus = new ArrayList<>();
