@@ -26,9 +26,13 @@ public class SysRoleController {
     @Autowired
     private SysRoleService sysRoleService;
 
-    @PreAuthorize("hasAuthority('sys:role:view')")
+    /*@PreAuthorize("hasAuthority('sys:role:view')")*/
     @GetMapping(value = "/findAll")
     public HttpResult findAll() {
+        System.out.println("查询角色列表");
         return HttpResult.ok(sysRoleService.findAll());
     }
+
+
+
 }

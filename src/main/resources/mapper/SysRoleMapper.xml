@@ -21,8 +21,13 @@
         where id = #{id,jdbcType=BIGINT}
     </select>
     <select id="findAll" resultMap="BaseResultMap">
-        select
+       <!--select
         <include refid="Base_Column_List" />
-        from sys_role
+        from sys_role-->
+
+        select r.*
+        from sys_user_role ur,sys_user u,sys_role r
+        where ur.user_id=u.id
+        and ur.role_id=r.id
     </select>
 </mapper>

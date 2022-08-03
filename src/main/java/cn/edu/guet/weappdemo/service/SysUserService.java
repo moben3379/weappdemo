@@ -16,10 +16,20 @@ public interface SysUserService {
 
     List<SysUser> findUserList();//查找用户列表
 
+    int getUser(String id);//根据id查询用户
+
     Set<String> findPermissions(String userName);
 
     SysUser findByName(String username);
 
     List<SysUserRole> findUserRoles(Long userId);
 
+    //新增用户
+    int insertUser(String name,String nickName,String email,String mobile,String password,String deptId,String roleId);
+
+    //根据id修改用户
+    int editUser(Long id,String name,String nick_name,String email,String mobile,String password,Long deptId,Long roleId);
+
+    //删除用户
+    int deleteUser(Long id);
 }

@@ -12,5 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SysRoleMapper {
     SysRole selectByPrimaryKey(Long id);
+
     List<SysRole> findAll();
 }
