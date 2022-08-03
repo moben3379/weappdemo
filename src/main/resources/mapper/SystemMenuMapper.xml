@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weappdemo.mapper.SystemMenuMapper">
+    <resultMap id="SystemMenuMap" type="cn.edu.guet.weappdemo.bean.SystemMenu">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="parent_id" jdbcType="BIGINT" property="parentId"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="perms" jdbcType="VARCHAR" property="perms"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="icon" jdbcType="VARCHAR" property="icon"/>
+        <result column="order_num" jdbcType="INTEGER" property="orderNum"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name, parent_id, url, perms, type, icon, order_num
+    </sql>
+    <update id="updateMenu">
+        UPDATE sys_menu SET parent_id=#{parentId},name=#{name},url=#{url},perms=#{perms},type=#{type},icon=#{icon},order_num=#{orderNum} WHERE id=#{id}
+    </update>
+    <delete id="deleteMenu">
+        DELETE FROM sys_menu WHERE id=#{id}
+    </delete>
+    <select id="getSystemMenuList" resultType="cn.edu.guet.weappdemo.bean.SystemMenu" resultMap="SystemMenuMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_menu
+    </select>
+    <insert id="addMenu">
+        INSERT INTO sys_menu(parent_id,name,url,perms,type,icon,order_num) values(#{parentId},#{name},#{url},#{perms},#{type},#{icon},#{orderNum})
+    </insert>
+</mapper>

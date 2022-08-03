@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weappdemo.mapper.OrderListMapper">
+    <resultMap id="OrderListMap" type="cn.edu.guet.weappdemo.bean.OrderList">
+        <id column="order_id" jdbcType="INTEGER" property="order_id"/>
+        <result column="Menu_id" jdbcType="VARCHAR" property="menu_id"/>
+        <result column="Menu_price" jdbcType="DECIMAL" property="menu_price"/>
+        <result column="Menu_quantity" jdbcType="INTEGER" property="menu_quantity"/>
+        <result column="buyer_name" jdbcType="VARCHAR" property="buyer_name"/>
+        <result column="buyer_phone" jdbcType="VARCHAR" property="buyer_phone"/>
+        <result column="buyer_address" jdbcType="VARCHAR" property="buyer_address"/>
+        <result column="buyer_openid" jdbcType="VARCHAR" property="buyer_openid"/>
+        <result column="order_amount" jdbcType="DECIMAL" property="order_amount"/>
+        <result column="order_status" jdbcType="TINYINT" property="order_status"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="create_time"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="update_time"/>
+    </resultMap>
+    <delete id="deleteOrderByOrderId" parameterType="string">
+        delete
+        from order_master where order_id=#{VALUE}
+    </delete>
+    <select id="getOrderList" resultType="cn.edu.guet.weappdemo.bean.OrderList" resultMap="OrderListMap">
+        SELECT *
+        FROM order_master
+    </select>
+
+
+    <!--查询订单-->
+    <select id="searchOrderList" resultType="cn.edu.guet.weappdemo.bean.OrderList" resultMap="OrderListMap" parameterType="string">
+        SELECT *
+        FROM order_master
+        WHERE order_id LIKE concat('%',#{VALUE},'%') or
+            Menu_id LIKE concat('%',#{VALUE},'%') or
+            Menu_price LIKE concat('%',#{VALUE},'%') or
+            Menu_quantity LIKE concat('%',#{VALUE},'%') or
+            buyer_name LIKE concat('%',#{VALUE},'%') or
+            buyer_phone LIKE concat('%',#{VALUE},'%') or
+            buyer_address LIKE concat('%',#{VALUE},'%') or
+            buyer_openid LIKE concat('%',#{VALUE},'%') or
+            order_amount LIKE concat('%',#{VALUE},'%') or
+            order_status LIKE concat('%',#{VALUE},'%') or
+            create_time LIKE concat('%',#{VALUE},'%') or
+            update_time LIKE concat('%',#{VALUE},'%')
+    </select>
+
+</mapper>

@@ -11,3 +11,16 @@ server:
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: cn.edu.guet.weappdemo.mapper
+
+
+#微信配置
+wx:
+  pay:
+    #微信公众号或者小程序等的appid
+    app-id: wx0ce552912c5e4957
+    #应用密钥
+    app-secret: 1904646f9533ce1993c86e3ad302f504
+    #微信支付商户号
+    mch-id: 1623889015
+    #微信支付商户密钥
+    mch-key: v2LZk95bXz6VPjQq9yOPg3wPCD3BKqcM

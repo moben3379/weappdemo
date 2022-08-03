@@ -11,7 +11,10 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface SysMenuMapper {
+
     List<SysMenu> findAll();
 
     List<SysMenu> findByUserName(@Param(value = "userName") String userName);
+
 }
+
