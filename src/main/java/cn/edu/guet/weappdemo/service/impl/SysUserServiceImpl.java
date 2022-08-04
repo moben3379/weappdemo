@@ -66,6 +66,7 @@ public class SysUserServiceImpl implements SysUserService {
         return sysUserRoleMapper.findUserRoles(userId);
     }
 
+
     /*
     查询用户列表
      */
@@ -73,6 +74,45 @@ public class SysUserServiceImpl implements SysUserService {
     public List<SysUser> findUserList() {
         return sysUserMapper.findUserList();
     }
+
+    /*
+    根据id查询用户
+     */
+    @Override
+    public int getUser(String id) {
+        return sysUserMapper.getUser(id);
+    }
+
+    /*
+    新增用户
+     */
+    @Override
+    public int insertUser(String name, String nickName, String email, String mobile, String password, String deptId, String roleId) {
+        int insertUserList=sysUserMapper.insertUser(name, nickName, email, mobile, password, deptId);
+
+        String id=sysUserMapper.searchUserIdByName(name);//根据新增的用户名称获取id
+
+        int insertRoleList=sysUserMapper.insertUserRole(id,roleId);
+        return insertUserList;
+    }
+
+    /*
+    修改用户
+     */
+    @Override
+    public int editUser(Long id, String name, String nick_name, String email, String mobile, String password, Long deptId, Long roleId) {
+//    public int editUser(String id){
+        int updateUser=sysUserMapper.editUser(id,name,nick_name,email,mobile,password,deptId);
+        int updateUserRole=sysUserMapper.editUserRole(id,roleId);
+    return sysUserMapper.editUser(id,name,nick_name,email,mobile,password,deptId);
+    }
+
+    //删除用户
+    @Override
+    public int deleteUser(Long id) {
+        return sysUserMapper.deleteUser(id);
+    }
+
 
     @Override
     public Set<String> findPermissions(String userName) {

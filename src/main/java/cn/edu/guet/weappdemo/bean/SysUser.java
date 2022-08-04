@@ -1,6 +1,7 @@
 package cn.edu.guet.weappdemo.bean;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,8 +28,17 @@ public class SysUser extends BaseModel {
 
     private Long deptId;
 
+    private String createBy;
+
+    private Date createTime;
+
+    private  String lastUpdateBy;
+
+    private  Date lastUpdateTime;
+
     private Byte delFlag;
-    
+
+    private Long roleId;
     // 非数据库字段
     private String deptName;
     // 非数据库字段
@@ -115,4 +125,51 @@ public class SysUser extends BaseModel {
 		this.userRoles = userRoles;
 	}
 
+	@Override
+	public String getCreateBy() {
+		return createBy;
+	}
+
+	@Override
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+
+	public Long getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Long roleId) {
+		this.roleId = roleId;
+	}
+
+	@Override
+	public String getLastUpdateBy() {
+		return lastUpdateBy;
+	}
+
+	@Override
+	public void setLastUpdateBy(String lastUpdateBy) {
+		this.lastUpdateBy = lastUpdateBy;
+	}
+
+	@Override
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	@Override
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	@Override
+	public Date getLastUpdateTime() {
+		return lastUpdateTime;
+	}
+
+	@Override
+	public void setLastUpdateTime(Date lastUpdateTime) {
+		this.lastUpdateTime = lastUpdateTime;
+	}
 }

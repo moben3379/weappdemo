@@ -18,19 +18,58 @@
         <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime"/>
         <result column="del_flag" jdbcType="TINYINT" property="delFlag"/>
     </resultMap>
+    <insert id="insertUser" parameterType="java.lang.String">
+        insert into sys_user(name,nick_name,email,mobile,password,dept_id)
+            values (#{name},#{nickName},#{email},#{mobile},#{password},#{deptId})
+    </insert>
+    <insert id="insertUserRole">
+        insert into sys_user_role(user_id,role_id) values (#{id},#{roleId})
+    </insert>
+    <delete id="deleteUser">
+        delete u,ur from sys_user u left join sys_user_role ur on u.id=ur.user_id where u.id=#{id}
+    </delete>
+    <select id="searchUserIdByName" resultType="string" parameterType="string">
+        select id
+        from sys_user
+        where name=#{name}
+    </select>
+
     <select id="findByName" parameterType="java.lang.String" resultMap="BaseResultMap">
         select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName
         from sys_user u
         where u.name = #{name,jdbcType=VARCHAR}
     </select>
     <select id="findUserList" parameterType="java.lang.String" resultMap="BaseResultMap">
-        select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName
-        from sys_user u
+       /* select u.*, (select d.name from sys_dept d where d.id = u.dept_id) deptName
+        from sys_user u*/
 
-        /*select udr.* ,d.name
-        from sys_dept d,(select u.*,sur.remark
-        from sys_user u,(select ur.* ,(select remark from sys_role r where r.id=ur.role_id )remark from sys_user_role ur) sur
-        where u.id= sur.user_id) udr
-        where d.id=udr.dept_id*/
+        /*select u.* ,d.name deptName,r.remark roleName
+        from sys_user u,sys_dept d,sys_user_role ur,sys_role r
+        where d.id=u.dept_id
+          and u.id=ur.user_id
+          and ur.role_id=r.id*/
+       select d.name deptName ,u.*,r.remark roleNames,r.id roleId
+       from sys_user u inner join sys_dept d on d.id=u.dept_id
+                       inner join sys_user_role ur on u.id=ur.user_id
+                       inner join sys_role r on ur.role_id=r.id
     </select>
+
+    <select id="getUser" resultType="java.lang.Integer">
+        select u.*,d.name deptName,r.remark roleNames
+        from sys_user u ,sys_dept d,sys_user_role ur,sys_role r
+        where u.id=#{id}
+          and u.dept_id=d.id
+          and u.id=ur.user_id
+          and ur.role_id=r.id
+    </select>
+
+    <update id="editUser">
+        update sys_user set name=#{name},nick_name=#{nickName},email=#{email},mobile=#{mobile},password=#{password},dept_id=#{deptId}
+        where id=#{id}
+
+    </update>
+    <update id="editUserRole">
+        update sys_user_role set role_id=#{roleId} where user_id=#{id}
+    </update>
+
 </mapper>
