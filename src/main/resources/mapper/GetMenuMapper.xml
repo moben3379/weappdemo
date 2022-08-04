@@ -24,12 +24,16 @@
             Menu_detail = #{Detail,jdbcType=VARCHAR}
         Where Menu_Id = #{Id,jdbcType=INTEGER}
     </insert>
+    <insert id="AddFoodMenu">
+        INSERT INTO FoodMenu_Information(Menu_Id,Menu_Name,Menu_Price,Menu_Form,Menu_Count,Menu_Icon,Menu_detail) values(#{Id},#{Name},#{Price},#{Form},#{Count},#{Icon},#{Detail})
+    </insert>
 
     <select id="findAll" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from FoodMenu_Information
     </select>
+
     <select id="searchMenu" resultType="cn.edu.guet.weappdemo.bean.FoodMenu">
         SELECT *
         FROM FoodMenu_Information
@@ -40,4 +44,12 @@
             Menu_Icon LIKE concat('%',#{VALUE},'%') or
             Menu_detail LIKE concat('%',#{VALUE},'%')
     </select>
+
+
+    <delete id="deleteMenu" parameterType="string">
+        delete
+        from FoodMenu_Information where menu_id=#{VALUE}
+    </delete>
+
+
 </mapper>
