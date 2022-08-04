@@ -3,7 +3,6 @@ package cn.edu.guet.weappdemo.controller;
 import cn.edu.guet.weappdemo.bean.FoodMenu;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.GetMenuService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +41,9 @@ public class GetMenuController {
         System.out.println(Id+Name+Price+Form+Count+Icon+Detail);
         getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
 //        return HttpResult.ok(getMenus);
+    }
+    @PostMapping(value = "deleteMenu")
+    public void deleteMenu(@RequestBody String Id) {
+        getMenuService.deleteMenu(Id);
     }
 }
