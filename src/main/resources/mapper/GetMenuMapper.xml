@@ -24,6 +24,9 @@
             Menu_detail = #{Detail,jdbcType=VARCHAR}
         Where Menu_Id = #{Id,jdbcType=INTEGER}
     </insert>
+    <insert id="AddFoodMenu">
+        INSERT INTO FoodMenu_Information(Menu_Id,Menu_Name,Menu_Price,Menu_Form,Menu_Count,Menu_Icon,Menu_detail) values(#{Id},#{Name},#{Price},#{Form},#{Count},#{Icon},#{Detail})
+    </insert>
 
     <select id="findAll" resultMap="BaseResultMap">
         select
