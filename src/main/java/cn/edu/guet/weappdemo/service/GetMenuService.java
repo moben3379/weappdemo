@@ -10,5 +10,9 @@ public interface GetMenuService {
 //    修改菜品输入数据库
     void AlterFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail );
 
+
     void AddFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail);
+
+    void deleteMenu(String Id);
+
 }

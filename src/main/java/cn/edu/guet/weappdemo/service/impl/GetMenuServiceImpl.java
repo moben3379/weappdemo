@@ -24,10 +24,17 @@ public class GetMenuServiceImpl implements GetMenuService {
         getMenuMapper.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
     }
 
+
     @Override
     public void AddFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail) {
         getMenuMapper.AddFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
     }
 
+
+
+    @Override
+    public void deleteMenu(String Id) {
+        getMenuMapper.deleteMenu(Id);
+    }
 
 }
