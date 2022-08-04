@@ -1,6 +1,7 @@
 package cn.edu.guet.weappdemo.service.impl;
 
 import cn.edu.guet.weappdemo.bean.FoodMenu;
+import cn.edu.guet.weappdemo.bean.OrderList;
 import cn.edu.guet.weappdemo.mapper.GetMenuMapper;
 import cn.edu.guet.weappdemo.service.GetMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class GetMenuServiceImpl implements GetMenuService {
     @Override
     public void AlterFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail) {
         getMenuMapper.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
+    }
+
+
+    @Override
+    public List<FoodMenu> searchMenu(String searchKey) {
+         return getMenuMapper.searchMenu(searchKey);
     }
 
 

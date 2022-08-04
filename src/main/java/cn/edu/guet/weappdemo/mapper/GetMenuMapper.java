@@ -15,11 +15,14 @@ public interface GetMenuMapper {
     List<FoodMenu> findAll();
     void AlterFoodMenu(@Param(value = "Id") Integer Id,@Param(value = "Name") String Name,@Param(value = "Price") double Price,@Param(value = "Form") String Form,@Param(value = "Count") Integer Count,@Param(value = "Icon") String Icon,@Param(value = "Detail") String Detail);
 
+    List<FoodMenu> searchMenu(String searchKey);
+
 
     void AddFoodMenu(@Param(value = "Id") Integer Id,@Param(value = "Name") String Name,@Param(value = "Price") double Price,@Param(value = "Form") String Form,@Param(value = "Count") Integer Count,@Param(value = "Icon") String Icon,@Param(value = "Detail") String Detail);
 
 
     int deleteMenu(String Id);
+
 
 }
 
