@@ -30,4 +30,14 @@
         <include refid="Base_Column_List"/>
         from FoodMenu_Information
     </select>
+    <select id="searchMenu" resultType="cn.edu.guet.weappdemo.bean.FoodMenu">
+        SELECT *
+        FROM FoodMenu_Information
+        WHERE Menu_Name LIKE concat('%',#{VALUE},'%') or
+            Menu_Price LIKE concat('%',#{VALUE},'%') or
+            Menu_Form LIKE concat('%',#{VALUE},'%') or
+            Menu_Count LIKE concat('%',#{VALUE},'%') or
+            Menu_Icon LIKE concat('%',#{VALUE},'%') or
+            Menu_detail LIKE concat('%',#{VALUE},'%')
+    </select>
 </mapper>

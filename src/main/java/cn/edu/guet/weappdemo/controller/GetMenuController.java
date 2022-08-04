@@ -43,4 +43,11 @@ public class GetMenuController {
         getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
 //        return HttpResult.ok(getMenus);
     }
+
+    @PreAuthorize("hasAuthority('sys:menu:view')")
+    @PostMapping(value ="/searchMenu")
+    public HttpResult searchMenu(@RequestBody String searchKey){
+        System.out.println(searchKey);
+        return HttpResult.ok(getMenuService.searchMenu(searchKey));
+    }
 }
