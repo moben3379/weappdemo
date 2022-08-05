@@ -24,3 +24,11 @@ wx:
     mch-id: 1623889015
     #微信支付商户密钥
     mch-key: v2LZk95bXz6VPjQq9yOPg3wPCD3BKqcM
+
+  login:
+    #微信后台授权的url，通过此url发送code、appid、小程序秘钥给微信后台换取openId、session_key等
+    url: https://api.weixin.qq.com/sns/jscode2session?appid=wx0ce552912c5e4957&secret=1904646f9533ce1993c86e3ad302f504&js_code={2}&grant_type=authorization_code
+    #小程序秘钥
+    secret: 1904646f9533ce1993c86e3ad302f504
+    #微信公众号或者小程序等的appid
+    app-id: wx0ce552912c5e4957
