@@ -15,9 +15,10 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+
     @GetMapping("getOrderList")
     public HttpResult getOrderList() {
-
+        System.out.println();
         return HttpResult.ok(orderService.orderList());
     }
 

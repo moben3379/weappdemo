@@ -40,11 +40,14 @@ public class GetMenuController {
     public HttpResult searchMenu(@RequestBody String searchKey) {
         return HttpResult.ok(getMenuService.searchMenu(searchKey));
 
+
     }
+    
     @GetMapping("addMenuInformation")//新增菜品数据
     public void addMenuInformation(@RequestParam Integer Id, @RequestParam String Name, @RequestParam double Price, @RequestParam String Form, @RequestParam Integer Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
         getMenuService.AddFoodMenu(Id, Name, Price, Form, Count, Icon, Detail);
     }
+    
     @PostMapping("deleteMenu")
     public void deleteMenu(@RequestBody String Id) {
         getMenuService.deleteMenu(Id);

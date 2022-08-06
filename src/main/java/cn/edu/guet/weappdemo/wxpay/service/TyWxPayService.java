@@ -49,7 +49,7 @@ public class TyWxPayService {
                 //获取本地IP
                 .spbillCreateIp(entity.getIp(/*客户端ip*/))/*客户端ip*/
                 //回调的 URL 地址
-                .notifyUrl("回调接口地址")/*这里写支付成功后微信的微信接口*/
+                .notifyUrl("https://g2.juntaitec.cn")/*这里写支付成功后微信的微信接口*/
                 .timeExpire(DateUtils.format(DateUtils.computeDate(LocalDateTime.now(/*支付过期时间*/), 10, DateUtils.Type.MINUTE), "yyyyMMddHHmmss"))//支付过期时间
                 .timeStart(DateUtils.dateTimeNow())//当前时间
                 .build();
@@ -80,7 +80,7 @@ public class TyWxPayService {
                 //退款金额
                 .refundFee(BaseWxPayRequest.yuanToFen(entity.getRefundFee().toString()))
                 //回调接口
-                .notifyUrl("回调接口地址")
+                .notifyUrl("https://g2.juntaitec.cn")
                 .build();
 
         try {

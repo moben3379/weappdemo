@@ -39,7 +39,7 @@ public class CallbackController {
             // 结果正确 outTradeNo
             String orderId = notifyResult.getOutTradeNo();
             String tradeNo = notifyResult.getTransactionId();
-            String totalFee = BaseWxPayResult.feeToYuan(notifyResult.getTotalFee());
+            String totalFee = BaseWxPayResult.fenToYuan(notifyResult.getTotalFee());
             //支付成功
             if("SUCCESS".equals(notifyResult.getResultCode())) {
                 log.info("================>微信支付回调：订单号<{}>",orderId);
