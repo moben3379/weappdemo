@@ -25,15 +25,16 @@ public class GetMenuController {
     @GetMapping("findMenuInformation")
     public HttpResult findMenuInformation() {
         List<FoodMenu> getMenus = getMenuService.findAll();
+        System.out.println("菜单信息："+getMenus);
         return HttpResult.ok(getMenus);
     }
 
 
     @GetMapping(value = "alterMenuInformation")
-//    String username, String password, HttpServletRequest request
-    public void alterMenuInformation(@RequestParam Integer Id, @RequestParam String Name, @RequestParam double Price, @RequestParam String Form, @RequestParam Integer Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
+    public void alterMenuInformation(@RequestParam int Id, @RequestParam int Form,@RequestParam String Name, @RequestParam double Price,  @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
+
         getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
-//        return HttpResult.ok(getMenus);
+
     }
 
     @PostMapping("searchMenu")
@@ -44,7 +45,7 @@ public class GetMenuController {
     }
     
     @GetMapping("addMenuInformation")//新增菜品数据
-    public void addMenuInformation(@RequestParam Integer Id, @RequestParam String Name, @RequestParam double Price, @RequestParam String Form, @RequestParam Integer Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
+    public void addMenuInformation(@RequestParam int Id, @RequestParam String Name, @RequestParam double Price, @RequestParam int Form, @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
         getMenuService.AddFoodMenu(Id, Name, Price, Form, Count, Icon, Detail);
     }
     
