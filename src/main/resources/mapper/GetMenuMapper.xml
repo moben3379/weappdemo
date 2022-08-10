@@ -3,27 +3,27 @@
 
 <mapper namespace="cn.edu.guet.weappdemo.mapper.GetMenuMapper">
     <resultMap id="BaseResultMap" type="cn.edu.guet.weappdemo.bean.FoodMenu">
-        <id column="Menu_Id" jdbcType="INTEGER" property="menu_Id" />
+        <id column="Menu_Id" jdbcType="BIGINT" property="menu_Id" />
+        <result column="Menu_Form" jdbcType="BIGINT" property="menu_Form"/>
         <result column="Menu_Name" jdbcType="VARCHAR" property="menu_Name"/>
         <result column="Menu_Price" jdbcType="DOUBLE" property="menu_Price"/>
-        <result column="Menu_Form" jdbcType="VARCHAR" property="menu_Form"/>
-        <result column="Menu_Count" jdbcType="INTEGER" property="menu_Count"/>
+        <result column="Menu_Count" jdbcType="BIGINT" property="menu_Count"/>
         <result column="Menu_Icon" jdbcType="VARCHAR" property="menu_Icon"/>
         <result column="Menu_detail" jdbcType="VARCHAR" property="menu_detail"/>
     </resultMap>
     <sql id="Base_Column_List">
-        Menu_Id,Menu_Name,Menu_Price,Menu_Form,Menu_Count,Menu_Icon,Menu_detail
+        Menu_Id,Menu_Form,Menu_Name,Menu_Price,Menu_Count,Menu_Icon,Menu_detail
     </sql>
-    <insert id="AlterFoodMenu">
+    <update id="AlterFoodMenu">
         Update FoodMenu_Information
-        Set Menu_Name = #{Name,jdbcType=VARCHAR} ,
-            Menu_Price = #{Price,jdbcType=DOUBLE},
-            Menu_Form = #{Form,jdbcType=VARCHAR},
-            Menu_Count = #{Count,jdbcType=INTEGER},
-            Menu_Icon = #{Icon,jdbcType=VARCHAR},
-            Menu_detail = #{Detail,jdbcType=VARCHAR}
-        Where Menu_Id = #{Id,jdbcType=INTEGER}
-    </insert>
+        Set Menu_Name = #{Name} ,
+            Menu_Form = #{Form},
+            Menu_Price = #{Price},
+            Menu_Count = #{Count},
+            Menu_Icon = #{Icon},
+            Menu_detail = #{Detail}
+        Where Menu_Id = #{Id}
+    </update>
     <insert id="AddFoodMenu">
         INSERT INTO FoodMenu_Information(Menu_Id,Menu_Name,Menu_Price,Menu_Form,Menu_Count,Menu_Icon,Menu_detail) values(#{Id},#{Name},#{Price},#{Form},#{Count},#{Icon},#{Detail})
     </insert>

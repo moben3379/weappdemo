@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface OrderListMapper {
 
-    List<OrderList> getOrderList();
+    List<OrderList> getOrderList();/*获取所有订单信息*/
 
     List<OrderList> searchOrderList(String searchKey);/*查询订单*/
 
