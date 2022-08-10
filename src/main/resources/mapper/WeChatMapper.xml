@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.guet.weappdemo.mapper.WeChatMapper">
+    <resultMap id="UserInfomationMap" type="cn.edu.guet.weappdemo.bean.UserInfomationBean">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="open_id" jdbcType="VARCHAR" property="open_id"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="created_at"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updated_at"/>
+    </resultMap>
+    <insert id="InsertWxUser">
+        INSERT
+        INTO wechat_user(phone,address,open_id)
+        VALUES (#{phone},#{address},#{open_id})
+    </insert>
+
+    <update id="updataUserInfo">
+        UPDATE wechat_user
+        SET phone=#{phone},address=#{address}
+        WHERE open_id=#{open_id}
+    </update>
+
+    <select id="findWxUserByOpenid" resultType="cn.edu.guet.weappdemo.bean.UserInfomationBean">
+        SELECT *
+        FROM wechat_user
+        WHERE open_id=#{VALUE}
+    </select>
+</mapper>

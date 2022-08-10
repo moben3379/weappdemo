@@ -29,7 +29,6 @@ public class OrderController {
 
     @PostMapping("searchOrderList")
     public HttpResult searchOrderList(@RequestBody String searchKey){
-        System.out.println(searchKey);
         return HttpResult.ok(orderService.searchOrderList(searchKey));
     }
 }
