@@ -10,6 +10,7 @@
     </parent>
     <groupId>cn.edu.guet</groupId>
     <artifactId>weappdemo</artifactId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>weappdemo</name>
     <description>weappdemo</description>
@@ -142,9 +143,20 @@
             <scope>compile</scope>
 
         </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>demojenkins</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
