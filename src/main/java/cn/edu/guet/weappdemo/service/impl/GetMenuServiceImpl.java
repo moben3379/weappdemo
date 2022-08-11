@@ -21,7 +21,8 @@ public class GetMenuServiceImpl implements GetMenuService {
     }
 
     @Override
-    public void AlterFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail) {
+    public void AlterFoodMenu(int Id, String Name, double Price, int Form, int Count, String Icon, String Detail) {
+        System.out.println("服务层收到消息"+Id+Form+Name+Price+Count+Icon+Detail);
         getMenuMapper.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
     }
 
@@ -33,7 +34,7 @@ public class GetMenuServiceImpl implements GetMenuService {
 
 
     @Override
-    public void AddFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail) {
+    public void AddFoodMenu(int Id, String Name, double Price, int Form, int Count, String Icon, String Detail) {
         getMenuMapper.AddFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
     }
 

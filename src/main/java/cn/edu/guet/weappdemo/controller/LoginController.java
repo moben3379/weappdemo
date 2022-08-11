@@ -46,6 +46,7 @@ public class LoginController {
         }
         // 系统登录认证
         JwtAuthenticationToken token = SecurityUtils.login(request, username, password, authenticationManager);
+        System.out.println("token回调："+token.getToken());
 
         return HttpResult.ok(token);
     }

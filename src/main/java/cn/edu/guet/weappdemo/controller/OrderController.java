@@ -15,9 +15,10 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+
     @GetMapping("getOrderList")
     public HttpResult getOrderList() {
-
+        System.out.println();
         return HttpResult.ok(orderService.orderList());
     }
 
@@ -28,6 +29,7 @@ public class OrderController {
     }
 
     @PostMapping("searchOrderList")
+    /*测试测试测试*/
     public HttpResult searchOrderList(@RequestBody String searchKey){
         return HttpResult.ok(orderService.searchOrderList(searchKey));
     }

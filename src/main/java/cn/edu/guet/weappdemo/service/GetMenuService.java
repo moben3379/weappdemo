@@ -8,13 +8,13 @@ public interface GetMenuService {
 //    查询菜品所有信息
     List<FoodMenu> findAll();
 //    修改菜品输入数据库
-    void AlterFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail );
+    void AlterFoodMenu(int Id, String Name, double Price, int Form, int Count, String Icon, String Detail );
 
 
     List<FoodMenu> searchMenu(String searchKey);
 
 
-    void AddFoodMenu(Integer Id, String Name, double Price, String Form, Integer Count, String Icon, String Detail);
+    void AddFoodMenu(int Id, String Name, double Price, int Form, int Count, String Icon, String Detail);
 
     void deleteMenu(String Id);
 

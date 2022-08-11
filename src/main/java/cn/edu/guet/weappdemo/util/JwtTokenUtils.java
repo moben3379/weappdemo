@@ -209,6 +209,7 @@ public class JwtTokenUtils implements Serializable {
     public static Boolean isTokenExpired(String token) {
         try {
             Claims claims = getClaimsFromToken(token);
+            System.out.println(token);
             Date expiration = claims.getExpiration();
             System.out.println("token的日期：" + expiration);
             boolean result = expiration.before(new Date());
