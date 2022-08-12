@@ -1,12 +1,17 @@
 package cn.edu.guet.weappdemo.pay;
 
+import cn.edu.guet.weappdemo.config.AppConfig;
 import cn.edu.guet.weappdemo.sdk.IWXPayDomain;
 import cn.edu.guet.weappdemo.sdk.WXPayConfig;
 import cn.edu.guet.weappdemo.sdk.WXPayConstants;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
 
 public class MyConfig extends WXPayConfig {
+
+    @Autowired
+    private AppConfig appConfig;
 
     private byte[] certData;
 
@@ -21,7 +26,7 @@ public class MyConfig extends WXPayConfig {
 
     // 微信公众号的APPID
     public String getAppID() {
-        return "wx506a7af4825cb208";
+        return "wxd9a46e74fc279fcc";
     }
 
     // 商户ID

@@ -4,22 +4,17 @@ import java.util.Objects;
 
 public class UserPayBean {
 
-    //用户的openid
-    private String openid;
+    //商品id
+    private String id;
+
+    //商品价格
+    private String price;
+
+    //商品数量
+    private int amount;
 
     //商品描述
     private String body;
-
-    //标价金额
-    private int total_fee;
-
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
 
     public String getBody() {
         return body;
@@ -29,12 +24,28 @@ public class UserPayBean {
         this.body = body;
     }
 
-    public int getTotal_fee() {
-        return total_fee;
+    public String getId() {
+        return id;
     }
 
-    public void setTotal_fee(int total_fee) {
-        this.total_fee = total_fee;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     @Override
@@ -42,21 +53,21 @@ public class UserPayBean {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserPayBean that = (UserPayBean) o;
-        return total_fee == that.total_fee && openid.equals(that.openid) && body.equals(that.body);
+        return amount == that.amount && id.equals(that.id) && price.equals(that.price) && body.equals(that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(openid, body, total_fee);
+        return Objects.hash(id, price, amount, body);
     }
 
     @Override
     public String toString() {
         return "UserPayBean{" +
-                "openid='" + openid + '\'' +
+                "id='" + id + '\'' +
+                ", price='" + price + '\'' +
+                ", amount=" + amount +
                 ", body='" + body + '\'' +
-                ", total_fee=" + total_fee +
                 '}';
     }
-
 }

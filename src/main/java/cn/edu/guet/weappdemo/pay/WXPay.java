@@ -46,8 +46,6 @@ public class WXPay {
      */
     @PostMapping("pay")
     public HttpResult unifiedOrder(@RequestBody UserPayBean userPayBean) throws Exception {
-        System.out.println("++++++++++++价格："+userPayBean.getTotal_fee()+
-                "-------------商品描述："+userPayBean.getBody());
 
         MyConfig config = null;
         cn.edu.guet.weappdemo.sdk.WXPay wxpay = null;
@@ -71,25 +69,31 @@ public class WXPay {
             e.printStackTrace();
         }
         String spbill_create_ip = addr.getHostAddress();
+
         //支付金额，需要转成字符串类型，否则后面的签名会失败
-        int total_fee = userPayBean.getTotal_fee();//100分：1块钱
-        //商品描述
-        String body = "路由器";
+        float price_f=Float.valueOf(userPayBean.getPrice())*100;
+        int count=Integer.valueOf(userPayBean.getAmount());
+        int total=(int)price_f*count;
+        String total_fee =String.valueOf(total);//金额
+
         //商户订单号
         String out_trade_no = WXPayUtil.generateNonceStr();
+
         //统一下单接口参数
         SortedMap<String, String> data = new TreeMap<String, String>();
-        data.put("appid", "wx506a7af4825cb208");
+        data.put("appid", appConfig.getApp_id());
         data.put("body", userPayBean.getBody());
         data.put("mch_id", appConfig.getMch_id());
+
         // 回调接口，必须是一个域名，不能使用IP
         // 腾讯会自动调用你（程序自己提供的接口）的接口，给你发送支付结果的数据，数据格式：xml格式
         data.put("notify_url", appConfig.getNotify_url());
         data.put("out_trade_no", out_trade_no);//交易号
         data.put("spbill_create_ip", spbill_create_ip);//下单的电脑IP地址
-        data.put("trade_type", "JSAPI");//支付类型
-        data.put("total_fee", String.valueOf(total_fee));
-        data.put("openid", userPayBean.getOpenid());
+        data.put("trade_type", "NATIVE");//支付类型
+        data.put("total_fee", total_fee);
+        String attach="id,"+userPayBean.getId()+";price,"+userPayBean.getPrice()+";amount,"+userPayBean.getAmount()+";";
+        data.put("attach",attach);
 
         try {
             Map<String, String> rMap = wxpay.unifiedOrder(data);
