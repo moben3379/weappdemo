@@ -167,7 +167,6 @@
     </dependencies>
 
     <build>
-             <defaulGoal>compile</defaulGole>
         <finalName>weappdemo</finalName>
         <plugins>
             <plugin>
