@@ -1,4 +1,4 @@
 FROM openjdk:17-jdk-alpine
 VOLUME /tmp
-COPY ./target/demojenkins.jar demojenkins.jar
+COPY ./target/weappdemo.jar weappdemo.jar
 ENTRYPOINT ["java","-jar","/weappdemo.jar", "&"]
