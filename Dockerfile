@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
-COPY ./target/weappdemo.jar weappdemo.jar
-ENTRYPOINT ["java","-jar","/weappdemo.jar", "&"]
+COPY ./target/demojenkins.jar demojenkins.jar
+ENTRYPOINT ["java","-jar","/demojenkins.jar", "&"]
