@@ -32,10 +32,10 @@ public class GetMenuController {
 
     @GetMapping(value = "alterMenuInformation")
     public void alterMenuInformation(@RequestParam int Id, @RequestParam int Form,@RequestParam String Name, @RequestParam double Price,  @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
-
         getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
 
     }
+
 
     @PostMapping("searchMenu")
     public HttpResult searchMenu(@RequestBody String searchKey) {
@@ -48,8 +48,8 @@ public class GetMenuController {
     }
 
     @PostMapping("deleteMenu")
+
     public void deleteMenu(@RequestBody String Id) {
         getMenuService.deleteMenu(Id);
-
     }
 }
