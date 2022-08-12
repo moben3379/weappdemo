@@ -168,6 +168,7 @@
 
     <build>
         <finalName>weappdemo</finalName>
+        <defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
