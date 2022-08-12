@@ -1,6 +1,7 @@
 package cn.edu.guet.weappdemo.mapper;
 
 import cn.edu.guet.weappdemo.bean.OrderList;
+import cn.edu.guet.weappdemo.bean.UserBean;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

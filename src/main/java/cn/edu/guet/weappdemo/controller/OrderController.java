@@ -34,4 +34,10 @@ public class OrderController {
         System.out.println(searchKey);
         return HttpResult.ok(orderService.searchOrderList(searchKey));
     }
+
+    @PostMapping("getPrepayId")
+    public HttpResult getPrepayId(@RequestBody String prepayId){
+        System.out.println(prepayId);
+        return HttpResult.ok(prepayId);
+    }
 }
