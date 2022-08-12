@@ -1,11 +1,14 @@
 package cn.edu.guet.weappdemo.bean;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class OrderList {
     private String order_id;
 
     private String menu_id;
+
+    private String menu_name;
 
     private String menu_price;
 
@@ -41,6 +44,14 @@ public class OrderList {
 
     public void setMenu_id(String menu_id) {
         this.menu_id = menu_id;
+    }
+
+    public String getMenu_name() {
+        return menu_name;
+    }
+
+    public void setMenu_name(String menu_name) {
+        this.menu_name = menu_name;
     }
 
     public String getMenu_price() {
@@ -128,6 +139,7 @@ public class OrderList {
         return "OrderList{" +
                 "order_id='" + order_id + '\'' +
                 ", menu_id='" + menu_id + '\'' +
+                ", menu_name='" + menu_name + '\'' +
                 ", menu_price='" + menu_price + '\'' +
                 ", menu_quantity='" + menu_quantity + '\'' +
                 ", buyer_name='" + buyer_name + '\'' +
@@ -139,5 +151,18 @@ public class OrderList {
                 ", create_time=" + create_time +
                 ", update_time=" + update_time +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderList orderList = (OrderList) o;
+        return order_id.equals(orderList.order_id) && menu_id.equals(orderList.menu_id) && menu_name.equals(orderList.menu_name) && menu_price.equals(orderList.menu_price) && menu_quantity.equals(orderList.menu_quantity) && buyer_name.equals(orderList.buyer_name) && buyer_phone.equals(orderList.buyer_phone) && buyer_address.equals(orderList.buyer_address) && buyer_openid.equals(orderList.buyer_openid) && order_amount.equals(orderList.order_amount) && order_status.equals(orderList.order_status) && create_time.equals(orderList.create_time) && update_time.equals(orderList.update_time);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(order_id, menu_id, menu_name, menu_price, menu_quantity, buyer_name, buyer_phone, buyer_address, buyer_openid, order_amount, order_status, create_time, update_time);
     }
 }
