@@ -18,7 +18,6 @@ public class OrderController {
 
     @GetMapping("getOrderList")
     public HttpResult getOrderList() {
-        System.out.println();
         return HttpResult.ok(orderService.orderList());
     }
 
