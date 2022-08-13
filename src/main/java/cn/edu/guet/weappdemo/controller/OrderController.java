@@ -38,4 +38,11 @@ public class OrderController {
         System.out.println(prepayId);
         return HttpResult.ok(prepayId);
     }
+
+    @GetMapping("InsertOrder")
+    public HttpResult InsertOrder( String menu_id, String menu_name, String menu_quantity, String buyer_name, String buyer_phone, String buyer_address, String buyer_openid, String order_amount){
+        System.out.println(order_amount);
+        Float totlePrice=Float.valueOf(order_amount);
+        return HttpResult.ok(orderService.InsertOrder(menu_id,menu_name, menu_quantity,buyer_name, buyer_phone, buyer_address,buyer_openid, totlePrice));
+    }
 }
