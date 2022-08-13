@@ -105,6 +105,7 @@ public class WXPay {
 
     public static void createQRCode(Map<String, String> map) throws Exception {
 
+
         File outputFile = new File("/var/www/html" + File.separator + "new.jpg");
         FileOutputStream fileOutputStream = new FileOutputStream(outputFile);
         String url = map.get("code_url");
