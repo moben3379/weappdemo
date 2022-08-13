@@ -19,12 +19,11 @@ wx:
     #微信公众号或者小程序等的appid
     app-id: wx506a7af4825cb208
     #应用密钥
-    #    app-secret: 7deb521448e11ddbc163fca849648198
     app-secret: 0b89666bf2c72eaba1f9cd8a7d35fe55
     #微信支付商户号
     mch-id: 1623889015
     #微信支付商户密钥
     mch-key: v2LZk95bXz6VPjQq9yOPg3wPCD3BKqcM
     #回调通知接口
-    notify_url: https://g2.glypro.com
+    notify_url: https://g2.glypro19.com/api/result
 
