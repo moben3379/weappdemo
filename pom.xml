@@ -61,7 +61,6 @@
             <artifactId>weixin-java-pay</artifactId>
             <version>4.0.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.binarywang/weixin-java-pay -->
 
 
         <dependency>

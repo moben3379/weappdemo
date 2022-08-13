@@ -81,7 +81,7 @@ public class WXPay {
 
         //统一下单接口参数
         SortedMap<String, String> data = new TreeMap<String, String>();
-        data.put("appid", appConfig.getApp_id());
+        data.put("appid","wxd9a46e74fc279fcc");
         data.put("body", userPayBean.getBody());
         data.put("mch_id", appConfig.getMch_id());
 
@@ -92,7 +92,7 @@ public class WXPay {
         data.put("spbill_create_ip", spbill_create_ip);//下单的电脑IP地址
         data.put("trade_type", "NATIVE");//支付类型
         data.put("total_fee", total_fee);
-        String attach="id,"+userPayBean.getId()+";price,"+userPayBean.getPrice()+";amount,"+userPayBean.getAmount()+";";
+        String attach="price,"+userPayBean.getPrice()+";amount,"+userPayBean.getAmount()+";";
         data.put("attach",attach);
 
         try {
