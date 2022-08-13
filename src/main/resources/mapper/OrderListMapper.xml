@@ -16,6 +16,11 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="create_time"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="update_time"/>
     </resultMap>
+    <insert id="InsertOrder">
+        INSERT
+        INTO order_master(Menu_id,Menu_name,Menu_quantity,buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount)
+        VALUES (#{menu_id},#{menu_name},#{menu_quantity},#{buyer_name},#{buyer_phone},#{buyer_address},#{buyer_openid},#{order_amount})
+    </insert>
     <delete id="deleteOrderByOrderId" parameterType="string">
         delete
         from order_master where order_id=#{VALUE}
