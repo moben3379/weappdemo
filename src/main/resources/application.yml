@@ -25,5 +25,5 @@ wx:
     #微信支付商户密钥
     mch-key: v2LZk95bXz6VPjQq9yOPg3wPCD3BKqcM
     #回调通知接口
-    notify_url: https://g2.glypro19.com/result
+    notify_url: https://477m2288i7.eicp.vip/result
 
