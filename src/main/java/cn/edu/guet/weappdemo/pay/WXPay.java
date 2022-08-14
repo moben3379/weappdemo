@@ -58,7 +58,7 @@ public class WXPay {
     */
     @PostMapping("pay")
     public HttpResult unifiedOrder(@RequestBody UserPayBean userPayBean) throws Exception {
-
+        System.out.println("价格+++++++++++++++++++++++++++++++++"+userPayBean.getPrice());
         MyConfig config = null;
         cn.edu.guet.weappdemo.sdk.WXPay wxpay = null;
         try {
