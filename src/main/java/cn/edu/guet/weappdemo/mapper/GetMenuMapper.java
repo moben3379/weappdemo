@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.Param;
 public interface GetMenuMapper {
     List<FoodMenu> findAll();
 
-    void AlterFoodMenu(@Param(value = "Id") int Id,@Param(value = "Name") String Name,@Param(value = "Price") double Price,@Param(value = "Form") int Form,@Param(value = "Count") int Count,@Param(value = "Icon") String Icon,@Param(value = "Detail") String Detail);
+    void AlterFoodMenu(@Param(value = "Id") int Id,@Param(value = "Name") String Name,@Param(value = "Price") double Price,@Param(value = "Form") int Form,@Param(value = "Count") int Count,@Param(value = "Icon") String Icon,@Param(value = "Detail") String Detail,@Param(value = "Describe") String Describe);
 
     List<FoodMenu> searchMenu(String searchKey);
 

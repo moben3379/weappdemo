@@ -31,8 +31,8 @@ public class GetMenuController {
 
 
     @GetMapping(value = "alterMenuInformation")
-    public void alterMenuInformation(@RequestParam int Id, @RequestParam int Form,@RequestParam String Name, @RequestParam double Price,  @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
-        getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail);
+    public void alterMenuInformation(@RequestParam int Id, @RequestParam int Form,@RequestParam String Name, @RequestParam double Price,  @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, @RequestParam String Describe,HttpServletRequest request) {
+        getMenuService.AlterFoodMenu(Id,Name,Price,Form,Count,Icon,Detail,Describe);
 
     }
 

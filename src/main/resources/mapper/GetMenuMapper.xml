@@ -10,9 +10,10 @@
         <result column="Menu_Count" jdbcType="BIGINT" property="menu_Count"/>
         <result column="Menu_Icon" jdbcType="VARCHAR" property="menu_Icon"/>
         <result column="Menu_detail" jdbcType="VARCHAR" property="menu_detail"/>
+        <result column="Menu_describe" jdbcType="VARCHAR" property="menu_describe"/>
     </resultMap>
     <sql id="Base_Column_List">
-        Menu_Id,Menu_Form,Menu_Name,Menu_Price,Menu_Count,Menu_Icon,Menu_detail
+        Menu_Id,Menu_Form,Menu_Name,Menu_Price,Menu_Count,Menu_Icon,Menu_detail,Menu_describe
     </sql>
     <update id="AlterFoodMenu">
         Update FoodMenu_Information
@@ -21,7 +22,8 @@
             Menu_Price = #{Price},
             Menu_Count = #{Count},
             Menu_Icon = #{Icon},
-            Menu_detail = #{Detail}
+            Menu_detail = #{Detail},
+            Menu_describe = #{Describe}
         Where Menu_Id = #{Id}
     </update>
     <insert id="AddFoodMenu">

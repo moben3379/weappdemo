@@ -11,6 +11,7 @@ public class FoodMenu {
     private int Menu_Count;
     private String Menu_Icon;
     private String Menu_detail;
+    private String Menu_describe;
 
     public int getMenu_Id() {
         return Menu_Id;
@@ -68,17 +69,25 @@ public class FoodMenu {
         Menu_detail = menu_detail;
     }
 
+    public String getMenu_describe() {
+        return Menu_describe;
+    }
+
+    public void setMenu_describe(String menu_describe) {
+        Menu_describe = menu_describe;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FoodMenu foodMenu = (FoodMenu) o;
-        return Menu_Id == foodMenu.Menu_Id && Double.compare(foodMenu.Menu_Price, Menu_Price) == 0 && Menu_Form == foodMenu.Menu_Form && Menu_Count == foodMenu.Menu_Count && Objects.equals(Menu_Name, foodMenu.Menu_Name) && Objects.equals(Menu_Icon, foodMenu.Menu_Icon) && Objects.equals(Menu_detail, foodMenu.Menu_detail);
+        return Menu_Id == foodMenu.Menu_Id && Double.compare(foodMenu.Menu_Price, Menu_Price) == 0 && Menu_Form == foodMenu.Menu_Form && Menu_Count == foodMenu.Menu_Count && Objects.equals(Menu_Name, foodMenu.Menu_Name) && Objects.equals(Menu_Icon, foodMenu.Menu_Icon) && Objects.equals(Menu_detail, foodMenu.Menu_detail) && Objects.equals(Menu_describe, foodMenu.Menu_describe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Menu_Id, Menu_Name, Menu_Price, Menu_Form, Menu_Count, Menu_Icon, Menu_detail);
+        return Objects.hash(Menu_Id, Menu_Name, Menu_Price, Menu_Form, Menu_Count, Menu_Icon, Menu_detail,Menu_describe);
     }
 
     @Override
@@ -91,6 +100,7 @@ public class FoodMenu {
                 ", Menu_Count=" + Menu_Count +
                 ", Menu_Icon='" + Menu_Icon + '\'' +
                 ", Menu_detail='" + Menu_detail + '\'' +
+                ", Menu_describe='" + Menu_describe + '\'' +
                 '}';
     }
 }
