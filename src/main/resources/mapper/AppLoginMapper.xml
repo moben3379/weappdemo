@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.guet.weappdemo.mapper.AppLoginMapper">
+    <resultMap id="BaseResultMap" type="cn.edu.guet.weappdemo.bean.AppUser">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="wxnumber" jdbcType="VARCHAR" property="wxnumber"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="detail_address" jdbcType="VARCHAR" property="detail_address"/>
+        <result column="other" jdbcType="VARCHAR" property="other"/>
+    </resultMap>
+    <insert id="register">
+        insert into AppUsers(wxnumber,password) values(#{wxnumber},#{password})
+    </insert>
+    <update id="ImproveUserInformation">
+        Update AppUsers
+        Set name = #{username} ,
+            address = #{address},
+            sex = #{sex}
+        Where wxnumber = #{phone}
+    </update>
+
+    <select id="appLogin" resultMap="BaseResultMap">
+        SELECT *
+        FROM AppUsers
+        WHERE wxnumber=#{wxnumber} and
+         password=#{password}
+
+    </select>
+
+
+
+
+
+</mapper>
