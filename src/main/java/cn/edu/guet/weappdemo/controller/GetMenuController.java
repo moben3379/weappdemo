@@ -46,6 +46,7 @@ public class GetMenuController {
     
     @GetMapping("addMenuInformation")//新增菜品数据
     public void addMenuInformation(@RequestParam int Id, @RequestParam String Name, @RequestParam double Price, @RequestParam int Form, @RequestParam int Count, @RequestParam String Icon, @RequestParam String Detail, HttpServletRequest request) {
+
         getMenuService.AddFoodMenu(Id, Name, Price, Form, Count, Icon, Detail);
     }
     

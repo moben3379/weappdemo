@@ -18,7 +18,7 @@ public class OrderController {
 
     @GetMapping("getOrderList")
     public HttpResult getOrderList() {
-        System.out.println();
+        System.out.println("订单信息："+orderService.orderList());
         return HttpResult.ok(orderService.orderList());
     }
 
