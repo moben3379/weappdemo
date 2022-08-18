@@ -4,6 +4,7 @@
     <resultMap id="OrderListMap" type="cn.edu.guet.weappdemo.bean.OrderList">
         <id column="order_id" jdbcType="INTEGER" property="order_id"/>
         <result column="Menu_id" jdbcType="VARCHAR" property="menu_id"/>
+        <result column="Menu_name" jdbcType="VARCHAR" property="menu_name"/>
         <result column="Menu_price" jdbcType="DECIMAL" property="menu_price"/>
         <result column="Menu_quantity" jdbcType="INTEGER" property="menu_quantity"/>
         <result column="buyer_name" jdbcType="VARCHAR" property="buyer_name"/>
@@ -15,6 +16,11 @@
         <result column="create_time" jdbcType="TIMESTAMP" property="create_time"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="update_time"/>
     </resultMap>
+    <insert id="InsertOrder">
+        INSERT
+        INTO order_master(Menu_id,Menu_name,Menu_quantity,buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount)
+        VALUES (#{menu_id},#{menu_name},#{menu_quantity},#{buyer_name},#{buyer_phone},#{buyer_address},#{buyer_openid},#{order_amount})
+    </insert>
     <delete id="deleteOrderByOrderId" parameterType="string">
         delete
         from order_master where order_id=#{VALUE}
@@ -31,6 +37,7 @@
         FROM order_master
         WHERE order_id LIKE concat('%',#{VALUE},'%') or
             Menu_id LIKE concat('%',#{VALUE},'%') or
+            Menu_name LIKE concat('%',#{VALUE},'%') or
             Menu_price LIKE concat('%',#{VALUE},'%') or
             Menu_quantity LIKE concat('%',#{VALUE},'%') or
             buyer_name LIKE concat('%',#{VALUE},'%') or

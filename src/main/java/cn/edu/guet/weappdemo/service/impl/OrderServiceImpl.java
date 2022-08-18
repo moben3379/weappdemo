@@ -31,5 +31,10 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderList> searchOrderList(String searchKey){
         return orderListMapper.searchOrderList(searchKey);
     }
-    
+
+    @Override
+    public int InsertOrder( String menu_id, String menu_name, String menu_quantity, String buyer_name, String buyer_phone, String buyer_address, String buyer_openid, Float order_amount) {
+        return orderListMapper.InsertOrder(menu_id,menu_name, menu_quantity,buyer_name, buyer_phone, buyer_address,buyer_openid, order_amount);
+    }
+
 }
